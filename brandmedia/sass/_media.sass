@@ -1,0 +1,195 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+  /**/
+  .main-footer
+	  text-align: center
+	  .footer-navigations
+		  display: block
+	  .footer-nav-wrapper
+		  width: 47%
+		  text-align: center
+		  padding: 0
+		  margin-bottom: 20px
+		  &::after
+			  display: none
+  .main-header
+    text-align: center
+    padding: 25px
+    .logo
+      margin-bottom: 10px
+  .sect-services
+	  .service-item-wrapper
+		  float: none !important
+		  width: auto
+		  margin-right: 0
+		  margin-bottom: 15px
+		  text-align: center
+		  &:last-child
+			  margin: 0
+		  .service-item-box
+			  display: inline-block
+		.service-item-description
+			.description-head
+				.head-pic
+					right: 15px !important
+  .sect-form
+	  label
+		  margin-right: 10px
+	  label span
+		  display: none !important
+  .sect-slider
+    .slider-wrapper
+      padding: 50px 0
+      .screen-wrapper
+        margin: 0 !important
+        .slider
+          .slide-wrap
+            height: 400px
+            img
+              height: 100% !important
+		.slider-text, .slider-buttons
+			text-align: center
+			margin-left: 0
+		.slider-text
+			h1
+				margin: 15px
+		.slider-buttons
+			margin: 15px 0 !important
+
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	/**/
+	.sect-slider
+		padding-left: 10px
+		padding-right: 10px
+	.main-header
+		.main-menu
+			li
+				font-size: 10px
+				.sub-menu
+					opacity: 1
+					display: none
+	.main-content
+		padding-left: 10px
+		padding-right: 10px
+		.tab
+			float: none !important
+			display: block !important
+			span
+				display: block
+			&:first-child
+				border-radius: 0 !important
+	.content-buttons
+		.button
+			float: none !important
+			display: block
+			margin: 0 0 15px 0
+			max-width: 150px
+@media only screen and (max-width : 650px)
+	/**/
+	.main-footer
+		.footer-image
+          display: none !important
+		.footer-nav-wrapper
+			display: block
+			width: 100%
+	.sect-form label
+		display: none !important
+	.main-header
+		.main-nav
+			.main-menu li
+				text-align: left
+				display: block
+				margin-bottom: 3px
+				margin-right: 0
+			.sub-menu
+				z-index: 3
+				top: -20px !important
+				left: 80px !important
+				max-width: 300px
+				&::before
+					content: "\f0d9" !important
+					left: -6px !important
+					top: 15px !important
+					color: #505255 !important
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	/**/
+	.sect-form .form-link
+		padding-left: 10px !important
+		padding-right: 10px !important
+	.sect-form input
+		width: 150px !important
+		margin-right: 5px !important
+	.slide-wrap
+		height: 270px !important
+	.slider-text h1
+		font-size: 30px !important
+	.slider-nav
+		padding: 10px !important
+		button
+			margin: 5px !important
+			&:first-child
+				margin-left: 0 !important
+			&:last-child
+				margin-right: 0 !important
+
+@media only screen and (max-width : 380px)
+	/**/
+	.slider-nav button
+		width: 30px !important
+		height: 30px !important
+		i.fa
+			font-size: 13px !important
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+	.main-header
+		.main-nav
+			.main-menu
+				.sub-menu
+					opacity: 0
+					visibility: hidden
+					transition: all .75s ease .5s
+				> li:hover > .sub-menu
+					opacity: 1
+					visibility: visible
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+	.sect-slider
+		.slider-wrapper
+			.slider-text
+				padding-top: 100px
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+

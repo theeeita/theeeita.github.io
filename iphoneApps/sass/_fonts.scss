@@ -1,0 +1,26 @@
+@mixin fontFace($name, $file) {
+  @font-face {
+    font-family: "#{$name}";
+    src: url('../fonts/#{$file}.eot');
+    src: url('../fonts/#{$file}.woff') format('woff'), url('../fonts/#{$file}.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+// Тут подключать все шрифты
+@include fontFace("Calibri", "Calibri/Calibri");
+@include fontFace("ColaborateLight", "Caloborate/ColaborateLight/ColaborateLight");
+@include fontFace("ColaborateRegular", "Caloborate/ColaborateRegular/ColaborateRegular");
+@include fontFace("ContraRegular", "Contra/ContraRegular/ContraRegular");
+@include fontFace("Chunkfive", "Chunkfive/Chunkfive");
+@include fontFace("AlexandriaFLF", "AlexandriaFLF/AlexandriaFLFRegular/AlexandriaFLF");
+@include fontFace("AlexandriaFLFBold", "AlexandriaFLF/AlexandriaFLFBold/AlexandriaFLFBold");
+
+// Для FlareLightGothic не нашлись eot и woff форматы.
+@font-face {
+  font-family: "FlareLightGothic";
+  src: url('../fonts/FlareLightGothic/FlareLightGothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,774 @@
+@import "dev/vars";
+@import "dev/mixins";
+@import "dev/functions";
+@import "dev/extensions";
+@import "fonts";
+@import "../libs/bootstrap-4.3.1/scss/bootstrap-reboot";
+@import "../libs/bootstrap-4.3.1/scss/bootstrap-grid";
+
+// Стилизация основных элементов сайта, типографика.
+body {
+  position: relative;
+  min-width: 320px;
+  overflow-x: hidden;
+  font-family: "ProximaNova", sans-serif;
+  font-size: $default-font-size;
+  font-weight: normal;
+  background: #FCFBF6;
+}
+
+.tab-item {
+  display: none;
+  &:first-child {
+    display: block;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &:focus {
+    outline: none !important;
+  }
+}
+
+a, a:hover, a:active {
+  text-decoration: none;
+  color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 50px;
+  font-family: "AlegreyaRegular", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  border: 1px dashed;
+  cursor: pointer;
+}
+
+.section-header {
+  font-family: "AlegreyaRegular", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  h2 {
+    margin-bottom: 20px;
+    font-size: em(48px);
+    line-height: .8;
+    color: #56534c;
+  }
+  .slogan {
+    color: #a47d5e;
+    text-transform: uppercase;
+  }
+}
+
+.item-ready-box, .recipe-info-box {
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  box-shadow: 0 0 25px 5px rgba(0, 0, 0, .2);
+  padding: 25px;
+  span {
+    display: block;
+    font-family: "AlegreyaRegular", sans-serif;
+    font-weight: bold;
+    text-align: center;
+  }
+  .box-title, .box-count {
+    font-size: em(16px);
+  }
+  .box-title {
+    text-transform: uppercase;
+    color: #A68063;
+  }
+  .box-number {
+    line-height: 1;
+  }
+  .box-count {
+    color: #979285;
+  }
+}
+
+.item-ready-box {
+  &::before {
+    @extend %pseudo;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/icons/read_bg.png");
+    opacity: .2;
+  }
+  .box-number {
+    font-size: em(90px);
+    color: #dfc691;
+  }
+}
+
+.recipe-info-box {
+  background: rgba(255, 255, 255, .8);
+  .box-number {
+    margin-bottom: 20px;
+    font-size: em(60px);
+    color: #56534c;
+  }
+}
+
+/* =======================
+   Расширения для элементов
+========================== */
+%logo {
+  font-family: "Scriptina", sans-serif;
+  font-size: em(30px);
+  letter-spacing: 5px;
+  a {
+    line-height: .3;
+    vertical-align: top;
+  }
+}
+
+%main-menu {
+  ul {
+    @extend %clear-list;
+    @extend %clearfix;
+  }
+  li {
+    position: relative;
+    float: left;
+    padding: 0 35px;
+    font-family: "AlegreyaRegular", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    &::after {
+      @extend %pseudo;
+      content: "~" !important;
+      right: 0;
+    }
+    &:last-child::after {
+      display: none;
+    }
+  }
+}
+
+
+/* =====================
+    Шапка сайта
+======================== */
+.main-header {
+  position: relative;
+  height: 900px;
+  background: url("../images/background/header_bg.jpg");
+  background-size: cover;
+  color: #fff;
+  border-bottom: 10px solid #fff;
+  &::after {
+    @extend %pseudo;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center center, #564f4c 0%, transparent 100%);
+    opacity: .71;
+  }
+  .top-line {
+    position: relative;
+    z-index: 3;
+    height: 70px;
+    padding: 25px 0;
+    background: rgba(86,83,76, .53);
+    .logo {
+      @extend %logo;
+    }
+    .mobile-menu-toggle {
+      display: none;
+      padding: 3px 5px;
+      background: transparent;
+      border: 1px solid #fff;
+      border-radius: 2px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .main-menu {
+      @extend %main-menu;
+      li {
+        &::after {
+          color: #fff;
+          }
+      }
+    }
+    .social-links {
+      ul {
+        @extend %clearfix;
+        @extend %clear-list;
+      }
+      li {
+        float: left;
+        font-size: 16px;
+        margin-right: 25px;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+  .main-header-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 225px;
+    text-align: center;
+    text-shadow: 0 1px 0 #3d3029;
+    h1 {
+      position: relative;
+      padding-bottom: 55px;
+      font-family: "PlayfairDisplayBold", sans-serif;
+      font-size: em(92px);
+      &::after {
+        @extend %pseudo;
+        @extend %align-center-x;
+        bottom: 0;
+        width: 190px;
+        height: 10px;
+        background: url("../images/icons/dashed_line.png") repeat-x;
+      }
+    }
+    .slogan {
+      display: block;
+      margin: 60px 0;
+      font-size: em(24px);
+    }
+    .button {
+      background: rgba(86,83,76, .55);
+      border-color: #9E9C93;
+      transition: background .5s ease;
+      &:hover {
+        background: rgba(86,83,76, .35);
+      }
+      &:active {
+        background: rgba(86,83,76, 1);
+      }
+    }
+  }
+  .main-header-icon {
+    @extend %align-center-x;
+    position: absolute;
+    z-index: 2;
+    bottom: -40px;
+    width: 80px;
+    height: 80px;
+    overflow: visible;
+    background: #fff;
+    border-radius: 50%;
+    &::before {
+      @extend %pseudo;
+      @extend %align-center;
+      z-index: 3;
+      width: 106px;
+      height: 106px;
+      background: url("../images/icons/bread_icon.png");
+    }
+  }
+}
+
+.section-teasers {
+  padding: 90px 0 100px 0;
+  .teasers-description {
+    text-align: center;
+    .description-text {
+      padding: 0 75px;
+      margin: 70px 0 45px 0;
+    }
+  }
+  .person-wrapper {
+    .person-data {
+      font-family: "AlegreyaRegular", sans-serif;
+      font-size: em(24px);
+      .person-data-job {
+        font-weight: bold;
+      }
+      .person-profile {
+        margin-top: 45px;
+        margin-bottom: 25px;
+        font-size: 20px;
+        color: #5D5A53;
+        .person-name, .person-surname {
+          position: relative;
+          padding: 15px;
+          &::before, &::after {
+            @extend %pseudo;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #D7D5CA;
+          }
+          &::before {
+            top: 0;
+          }
+          &::after {
+            bottom: 0;
+          }
+        }
+        .person-photo {
+          margin: 0 15px;
+        }
+      }
+    }
+    .person-quote {
+      position: relative;
+      width: 65%;
+      margin: 0  auto;
+      font-family: "Scriptina", sans-serif;
+      font-size: em(24px);
+      color: #a47d5e;
+      &::before, &::after {
+        @extend %pseudo;
+        width: 25px;
+        height: 15px;
+        background: url("../images/sprites/person_quote_sprite.png");
+      }
+      &::before {
+        top: 0;
+        left: 0;
+      }
+      &::after {
+        bottom: 0;
+        right: 0;
+        background-position: -25px 0;
+      }
+    }
+  }
+  .teasers-wrapper {
+    @extend %clearfix;
+    position: relative;
+    &::before {
+      @extend %pseudo;
+      @extend %align-center;
+      z-index: 3;
+      width: 247px;
+      height: 247px;
+      background: url("../images/icons/teaser_icon.png");
+    }
+    .teaser-image-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 290px;
+      height: 250px;
+      margin: 5px;
+      overflow: hidden;
+      &:nth-child(1), &:nth-child(3) {
+        float: left;
+      }
+      &:nth-child(2), &:nth-child(4) {
+        float: right;
+      }
+      &::before {
+        @extend %pseudo;
+        @extend %align-center;
+        z-index: 3;
+        width: 275px;
+        height: 235px;
+        border: 5px solid #fff;
+      }
+      &::after {
+        @extend %pseudo;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0;
+        transition: opacity .5s ease;
+      }
+      &:hover::after {
+        opacity: .45;
+      }
+    }
+  }
+}
+
+.section-slider {
+  padding: 140px 0 110px 0;
+  background: url("../images/background/favorite_bg.jpg");
+  
+  .tabs-wrapper {
+    //.tabs-wrapper .active { color: red; }
+    position: relative;
+    min-height: 512px;
+    background: #fff;
+    &::before {
+      @extend %pseudo;
+      bottom: 0;
+      right: 0;
+      width: 261px;
+      height: 294px;
+      background: url("../images/icons/windmill.png");
+    }
+    
+    .slider-nav-wrapper {
+      position: absolute;
+      right: 90px;
+      bottom: 40px;
+      width: 360px;
+      .slider-nav {
+        position: absolute;
+        width: 100%;
+      }
+      button {
+        position: absolute;
+        top: 25px;
+        width: 32px;
+        height: 32px;
+        background: url("../images/sprites/slider_nav_sprite.png");
+        border: none;
+        &.slide-prev {
+          left: -30px;
+          background-position: 33px 0;
+          &:hover {
+            background-position: 67px 0;
+          }
+        }
+        &.slide-next {
+          right: -30px;
+          background-position: -35px 0;
+          &:hover {
+            background-position: -136px 0;
+          }
+        }
+      }
+      .slider-items-nav {
+        width: 100%;
+        overflow-x: hidden;
+      }
+      .tabs-buttons {
+        @extend %clearfix;
+        position: relative;
+        width: 9999px;
+      }
+      .tab-button {
+        position: relative;
+        float: left;
+        width: 90px;
+        height: 90px;
+        margin: 0 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        overflow: hidden;
+        &::before {
+          @extend %pseudo;
+          width: 100%;
+          height: 100%;
+          background: #000;
+          opacity: 0;
+          transition: opacity .5s ease;
+        }
+        &:hover::before {
+          opacity: .35;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          
+        }
+      }
+    }
+    .tab-content-item {
+      @extend %clearfix;
+      position: relative;
+      .item-ready-box {
+        position: absolute;
+        top: -40px;
+        right: -100px;
+      }
+      .content-item-image {
+        float: left;
+        width: 40%;
+        overflow: hidden;
+        img {
+          height: 512px;
+        }
+      }
+      .content-item-description {
+        position: relative;
+        float: left;
+        width: 60%;
+        padding: 80px 65px 140px 65px;
+        .section-header {
+          text-align: left;
+          margin-bottom: 70px;
+          a {
+            color: #56534C;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  
+}
+
+.section-price-list {
+  position: relative;
+  padding: 95px 0 70px 0;
+  background: url("../images/background/breakfast_bg.jpg");
+  .price-list-content {
+    .section-header {
+      h2 {
+        margin-bottom: 12px;
+        font-size: em(60px);
+        color: #fff;
+      }
+      .slogan {
+        display: block;
+        margin-bottom: 60px;
+        font-size: em(18px);
+      }
+    }
+    .price-list-wrapper {
+      text-align: center;
+      span {
+        display: block;
+      }
+      li {
+        margin-bottom: 45px;
+        &:last-child {
+          margin: 0;
+        }
+      }
+      .list-item-title {
+        margin-bottom: 20px;
+        font-family: "AlegreyaRegular", sans-serif;
+        font-weight: bold;
+        font-size: em(30px);
+        color: #fff;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .list-item-description {
+        margin-bottom: 25px;
+        font-size: em(16px);
+        color: #C2BEBA;
+      }
+      .list-item-price {
+        font-family: "AlegreyaRegular", sans-serif;
+        font-size: em(36px);
+        color: #DFC691;
+      }
+    }
+  }
+  .price-cards-wrapper {
+    position: relative;
+    max-width: 440px;
+    .price-card {
+      position: absolute;
+      width: 100%;
+      padding: 10px;
+      background: #F3F1E9;
+      color: #56534C;
+      cursor: pointer;
+      // transition: all 1s ease;
+      &::after {
+        @extend %pseudo;
+        bottom: 0;
+        right: 0;
+        width: 176px;
+        height: 153px;
+        background: url("../images/icons/price_card_before.png");
+      }
+      &::before {
+        @extend %pseudo;
+        top: 0;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .25);
+      }
+      &:not(.active-card) {
+        &::after {
+          display: none;
+        }
+        &::before {
+          display: block;
+        }
+        &:hover::before {
+          background: rgba(0, 0, 0, .5);
+        }
+      }
+    }
+    .card-content {
+      position: relative;
+      z-index: 2;
+      min-height: 580px;
+      padding: 25px 40px;
+      text-align: center;
+      border: 1px dashed #000;
+      .card-header {
+        @extend %clearfix;
+        position: relative;
+        margin-bottom: 75px;
+        font-family: "AlegreyaRegular", sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        img {
+          margin-top: 15px;
+          max-width: 100%;
+        }
+        .card-header-text {
+          float: left;
+          padding-left: 70px;
+        }
+        .card-header-date {
+          float: right;
+          padding-right: 70px;
+        }
+      }
+      .card-title {
+        font-family: "AlegreyaRegular", sans-serif;
+        font-weight: bold;
+        font-size: em(35px);
+      }
+      .card-description {
+        margin: 45px 0 55px 0;
+      }
+      .button {
+        position: relative;
+        z-index: 3;
+        border: 1px solid #A47D5E;
+        color: #A47D5E;
+      }
+    }
+  }
+}
+
+.main-footer {
+  background: #F3F1E9;
+  padding: 100px 0 70px 0;
+  .section-header {
+    position: relative;
+    &::before {
+      @extend %pseudo;
+      @extend %align-center-x;
+      z-index: 1;
+      top: -65px;
+      width: 100px;
+      height: 115px;
+      background: url("../images/icons/windmill.png");
+      background-size: 100% 100%;
+    }
+    h2, span {
+      position: relative;
+      z-index: 2;
+    }
+  }
+  .recipe-items-wrapper {
+    text-align: center;
+    .recipe-item {
+      margin-bottom: 50px;
+      &:last-child {
+        margin: 0;
+      }
+    }
+    .item-icon {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    span {
+      display: block;
+    }
+    .item-title {
+      margin: 15px 0;
+      font-family: "AlegreyaRegular", sans-serif;
+      font-weight: bold;
+      font-size: em(30px);
+      color: #a47d5e;
+    }
+  }
+  .recipe-preview-wrapper {
+    position: relative;
+    margin-top: 100px;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 18px 30px rgba(0, 0, 0, .3);
+    .button {
+      position: absolute;
+      z-index: 5;
+      left: -30px;
+      bottom: -30px;
+      border: 1px dashed #E4CFA2;
+      color: #E4CFA2;
+      background: #fff;
+    }
+    .recipe-preview {
+      overflow: hidden;
+      height: 535px;
+      img {
+        max-height: 100%;
+      }
+    }
+  }
+  .recipe-info-wrapper {
+    position: absolute;
+    z-index: 3;
+    top: -25px;
+    right: 0;
+    .recipe-info-box {
+      &:first-child {
+        margin-bottom: 1px;
+      }
+    }
+    .item-ready-box {
+      position: absolute;
+    }
+  }
+
+  .footer-bottom-content {
+    padding-top: 100px;
+  }
+
+  .footer-nav {
+    @extend %main-menu;
+    text-align: center;
+    ul {
+      display: inline-block;
+      padding: 20px 0;
+      border-top: 1px solid #D0CCC7;
+      border-bottom: 1px solid #E7E4DD;
+    }
+    li {
+      &::before {
+        color: #56534c;
+      }
+    }
+    a {
+      color: #56534c;
+    }
+  }
+
+  .footer-logo {
+    text-align: center;
+    @extend %logo;
+    a {
+      color: #56534c;
+      vertical-align: baseline;
+    }
+  }
+}
+
+@import "media";

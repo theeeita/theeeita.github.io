@@ -1,0 +1,592 @@
+@import "vars"
+@import "fonts"
+
+@function em($font-size)
+  @return #{$font-size/$default-font-size}em
+
+
+.components
+  padding: 20px
+
+
+body
+  min-width: 320px
+  overflow-x: hidden
+  font-family: "HelveticaNeue", sans-serif
+  font-size: $default-font-size
+  line-height: 1
+  background: #000
+  color: #67747f
+  
+.hidden
+  display: none
+
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  &:focus
+    outline: none
+
+// Табы
+.tab
+  cursor: pointer
+
+.tab-item
+  display: none
+  &:first-child
+    display: block
+
+// Ссылки
+a, a:hover, a:focus, a:active
+  color: #fff
+  text-decoration: none
+
+// Расширения
+%responsive-img
+  max-width: 100%
+
+%clear-list
+  margin: 0
+  padding: 0
+  list-style-type: none
+
+%pseudo
+  content: ''
+  position: absolute
+
+%clearfix::after
+  content: ''
+  display: table
+  clear: both
+
+%inline-block
+  display: inline-block
+
+%align-center
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+
+// Определение всех кнопок (общий класс)
+.button
+  display: inline-block
+  position: relative
+  min-width: 135px
+  height: 30px
+  padding: 10px 15px
+  font:
+    family: "HelveticaNeue", sans-serif
+    weight: bold
+    size: em(14px)
+  line-height: .5
+  text:
+    align: center
+    shadow: 0 1px 0 rgba(0, 0, 0, .4)
+  letter-spacing: .5px
+  border:
+    top: 1px solid #808EA6
+    radius: 3px
+  background: linear-gradient(to top, #474E5C 0%, #5E687A 100%)
+  box-shadow: 0 0 3px rgba(0, 0, 0, .3)
+  .b-pic
+    position: relative
+    bottom: 3px
+    height: 13px
+    margin-left: 10px
+  i.fa
+    line-height: .3
+    margin-left: 13px
+  &:hover
+    background: linear-gradient(to bottom, #474E5C 0%, #5E687A 100%)
+  &:active
+    background: #474E5C
+  // Размерные модификации
+  &.b-small
+    min-width: 100px
+  // Цветовые и смысловые модификации кнопок и их состояний
+  &.b-ltblue
+    outline: #819EBB
+    border-color: #BED2E6
+    background: linear-gradient(to top, #779CC0 0%, #9CBAD9 100%)
+    &:hover
+      background: linear-gradient(to bottom, #779CC0 0%, #9CBAD9 100%)
+      &:active
+        background: #779CC0
+  &.b-silver
+    outline: #CED6E6
+    border-color: #fff
+    color: #92A2B1
+    background: linear-gradient(to top, #DFE2EB 0%, #EDF1F5 100%)
+    &:hover
+      background: linear-gradient(to bottom, #DFE2EB 0%, #EDF1F5 100%)
+      &:active
+        background: #DFE2EB
+  &.b-twitter
+    border-color: #58BCCF
+    background: linear-gradient(to top, #307192 0%, #429BB7 100%)
+    &:hover
+      background: linear-gradient(to bottom, #307192 0%, #429BB7 100%)
+      &:active
+        background: #307192
+  &.b-facebook
+    border-color: #5C91C7
+    background: linear-gradient(to top, #335181 0%, #456CAA 100%)
+    &:hover
+      background: linear-gradient(to bottom, #335181 0%, #456CAA 100%)
+      &:active
+        background: #335181
+  &.b-form
+    min-width: 75px
+    border-color: #DD8A64
+    background: linear-gradient(to top, #C83433 0%, #BF5D44 100%)
+    &:hover
+      background: linear-gradient(to bottom, #C83433 0%, #BF5D44 100%)
+      &:active
+        background: #C83433
+
+
+header, section
+  border-bottom: 1px solid
+
+
+.main-header
+  min-height: 106px
+  padding-top: 40px
+  font-family: "nevis", sans-serif
+  border-color: #282A31
+  background: #16171A
+  .logo, .slogan
+    display: inline-block
+    margin-right: 10px
+    margin-left: -10px // отступ за сетку как на макете
+  .logo
+    width: 163px
+    img
+      @extend %responsive-img
+  .slogan
+    font-size: em(14px)
+    color: #A6AAB3
+    margin: 0
+  .main-nav
+    text-align: right
+    ul, li
+      @extend %clear-list
+    .main-menu
+      > li
+        @extend %inline-block
+        position: relative
+        font-size: 12px
+        margin-right: 40px
+        &:last-child
+          margin: 0
+        a
+          text-transform: uppercase
+          font-size: 12px
+      .sub-menu
+        position: absolute
+        z-index: 2
+        left: -50px
+        top: 30px
+        min-width: 150px
+        padding-top: 8px
+        background: #3C3E42
+        border-radius: 5px
+        border-top: 1px solid #56595F
+        font-family: "HelveticaNeueBold", sans-serif
+        text-align: center
+        text-shadow: 0 1px 2px rgba(0, 0, 0, .6)
+        box-shadow: 0 0 5px 2px rgba(0, 0, 0, .6)
+        &.active
+          display: block
+        &::before
+          @extend %pseudo
+          top: -12px
+          content: "\f0d8"
+          font-family: "FontAwesome", sans-serif
+          font-size: 16px
+          font-weight: 900
+          color: #3C3E42
+          text-shadow: none
+        li
+          text-align: left
+          &:nth-child(odd)
+            background: #505255
+        a
+          display: block
+          padding: 10px 0 6px 0
+          text-transform: none
+          text-indent: 15px
+          letter-spacing: .5px
+          transition: color .25s ease
+          &:hover
+            color: #A6BCCC
+
+.sect-slider
+  padding: 15px 0
+  background: #202227
+  border-color: #282A31
+  .slider-wrapper
+    min-height: 395px
+    padding: 35px 0 15px 0
+    background: radial-gradient(ellipse at center, #e3e5e8 0%,#b5bac2 100%)
+    border-radius: 5px
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, .3)
+    .slider-buttons
+      margin-left: -10px
+      margin-top: 35px
+      .button
+        margin-right: 18px
+        &:last-child
+          margin: 0
+    .slider-text
+      margin-left: -10px
+      text-shadow: 0 1px 0 #DCDEE2
+      font-family: "MyriadProSemiboldItalic", sans-serif
+      font-weight: normal
+      color: #2A2A2A
+      span
+        font-size: em(15px)
+        font-weight: bold
+        &.st-light
+          color: #717882
+      h1
+        padding: 0
+        margin: 12px 0 20px 0
+        line-height: .7
+        font-family: "MyriadProBlackSemiboldItalic", sans-serif
+        font-size: em(45px)
+    .screen-wrapper
+      padding: 15px 0
+      margin-right: -10px !important
+      background: #2A2A2A
+      box-shadow: inset 0 0 3px 2px rgba(0, 0, 0, .3)
+      border-radius: 5px
+      border-bottom: 1px solid #C8CBD1
+      .slider
+        background: #fff
+        overflow-x: hidden
+        .owl-nav, .owl-dots
+          display: none
+        .slide-wrap
+          float: left
+          height: 275px
+          img
+            width: 100% !important
+            max-height: 100% !important
+    .slider-nav
+      @extend %align-center
+      position: absolute
+      z-index: 1
+      display: none
+      padding: 20px
+      text-align: center
+      box-shadow: inset 0 1px 0 #CCDFF1
+      border: 1px solid #5074AD
+      border-radius: 5px
+      overflow: hidden
+      &::after
+        @extend %pseudo
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        background: linear-gradient(to top, rgba(0, 0, 0, .7) 0%, #fff 100%)
+        opacity: .3
+      &.active
+        display: block
+      button
+        position: relative
+        z-index: 4
+        width: 40px
+        height: 40px
+        margin: 0 15px
+        border: none
+        border-bottom: 1px solid #ACCBE4
+        text-align: center
+        border-radius: 3px
+        color: #fff
+        background: linear-gradient(to top, #2C3339 0%, #51585E 100%)
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, .7)
+        i.fa
+          font-size: 15px
+        &:first-child
+          margin-left: 0
+        &:last-child
+          margin-right: 0
+        &:hover
+          background: linear-gradient(to bottom, #2C3339 0%, #51585E 100%)
+        &:active
+          background: #2C3339
+    .slider-dots
+      position: absolute
+      bottom: -25px
+      width: 100%
+      height: 10px
+      text-align: center
+      line-height: 0
+    .dot-item
+      display: inline-block
+      width: 10px
+      height: 10px
+      padding: 0
+      margin: 0 5px
+      border: none
+      border-radius: 50%
+      background: #444649
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, .7)
+      &:hover, &.active
+        background: #3A9CD0
+
+.main-content
+  background: #16171A
+  padding: 35px 0
+  .tabs-head
+    position: relative
+    z-index: 1
+    margin-bottom: 40px
+    background: linear-gradient(to top, #BAC0C8 0%, #CED2D8 100%)
+    border-radius: 5px
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .7), 0 -1px 0 #DFE2E5
+    .tab
+      float: left
+      padding: 13px 20px
+      color: #fff
+      .tab-info
+        display: block
+        &.ti-up
+          margin-bottom: 5px
+          font-family: "nevis", sans-serif
+          font-size: em(16px)
+          text-transform: uppercase
+          text-shadow: 0 -1px 0 #B5BDC4
+          color: #fff
+        &.ti-bot
+          font-family: "MyriadProSemiboldItalic", sans-serif
+          font-size: em(14px)
+          color: #6F7380
+          text-shadow: 0 1px 0 rgba(255, 255, 255, .6)
+      &:first-child
+        border-radius: 5px 0 0 5px
+      &:hover
+        background: linear-gradient(to bottom, #BAC0C8 0%, #CED2D8 100%)
+      &:active
+        background: #BAC0C8
+      &.active
+        background: linear-gradient(to top, #292B30 0%, #40434D 100%)
+        box-shadow: 0 -1px 0 #464A54
+        .tab-info.ti-bot
+          color: #7A7E8A
+          text-shadow: 0 1px 0 rgba(0, 0, 0, .5)
+  .content-buttons
+    margin-top: 20px
+    .button
+      float: left
+      margin-right: 20px
+      &:last-child
+        float: right
+        margin: 0
+
+.sect-services
+  padding: 30px 0
+  background: #212226
+  border-color: #252629
+  .service-item-wrapper
+    float: left
+    width: 262px
+    margin-right: 85px
+    color: #fff
+    &:last-child
+      margin-right: 0
+    .service-item-box
+      padding: 15px 15px 30px 15px
+      margin-bottom: 25px
+      background: #5C6A79
+      border-radius: 5px
+      border-top: 1px solid
+      box-shadow: 0 1px 5px .5px rgba(0, 0, 0, .5)
+      .item-head
+        margin-bottom: 20px
+        font-family: "nevis", sans-serif
+        font-weight: normal
+        font-size: em(12px)
+        text-transform: uppercase
+      .item-content
+        .item-poster
+          float: left
+          margin: 0 15px 0 10px
+        .item-text
+          float: left
+        span
+          display: inline-block
+          font-family: "HelveticaNeue", sans-serif
+          font-weight: bold
+          letter-spacing: .5px
+          &.item-text-top
+            position: relative
+            font-size: em(14px)
+            padding-bottom: 8px
+            margin-bottom: 8px
+            &::after
+              @extend %pseudo
+              left: 0
+              bottom: 0
+              height: 1px
+              width: 100%
+          &.item-text-bot
+            font-size: em(30px)
+
+      &.tour
+        text-shadow: 0 -1px 0 #495866
+        background: radial-gradient(ellipse at top center, #7E91A6 0%, #556270 100%)
+        border-color: #9EB4BF
+        .item-content .item-text-top::after
+          background: #7C8FA0
+      &.apps
+        text-shadow: 0 -1px 0 #299EC0
+        background: radial-gradient(ellipse at top center, #3BC8E1 0%, #2897C6 100%)
+        border-color: #42CAE2
+        .item-content .item-text-top::after
+          background: #3EC4DE	
+      &.jobs
+        text-shadow: 0 -1px 0 #B4C9D0
+        background: radial-gradient(ellipse at top center, #DBE8EC 0%, #BCD4DB 100%)
+        border-color: #E6EFF1
+        .item-content .item-text-top::after
+          background: #D9E6EA
+    .service-item-description
+      .description-head
+        position: relative
+        font-size: em(18px)
+        margin-bottom: 30px
+        .head-pic
+          position: absolute
+          right: 0
+          top: 0
+      .description-text
+        font-size: em(12px)
+        margin-bottom: 20px
+
+.sect-form
+  padding: 25px 0
+  background: #18191C
+  border-color: #26282C
+  .form-wrapper
+    height: 60px
+    border-radius: 5px
+    box-shadow: 0 0 3px rgba(0, 0, 0, .6)
+    overflow: hidden
+    .form-link
+      float: left
+      height: 100% !important
+      padding: 20px 18px
+      background: linear-gradient(to top, #6A6E78 0%, #8A909C 100%)
+      border-top: 1px solid #BCC4D6
+      &:hover .link-img
+        background-position: -2px 0
+      .link-img
+        display: block
+        width: 27px
+        height: 19px
+        background: url("../img/form_link.png") -31px 0 no-repeat
+    .form-sign
+      padding: 15px 0
+      background: linear-gradient(to top, #323539 0%, #464A50 100%)
+      border-top: 1px solid #5E636B
+      text-align: center
+      label
+        color: #fff
+        font-family: "nevis", sans-serif
+        font-size: em(14px)
+        text-transform: uppercase
+        span
+          display: inline-block
+          margin: 0 30px 0 15px
+          text-transform: none
+      input
+        width: 200px
+        height: 30px
+        margin-right: 15px
+        font-family: "HelveticaNeue", sans-serif
+        font-size: em(12px)
+        text-indent: 15px
+        color: #fff
+        border-radius: 3px
+        border: none
+        background: #24262B
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, .5)
+        border-bottom: 1px solid #45484C
+
+.main-footer
+  padding: 30px 0
+  background: #18191B
+  .footer-navigations
+    display: inline-block
+  .footer-content
+    display: inline-block
+    vertical-align: top
+    margin-left: 15px
+    .footer-image
+      display: inline-block
+      margin-top: 30px
+      margin-right: 15px
+    .footer-text
+      display: inline-block
+      vertical-align: top
+      h4
+        display: inline-block
+        margin-bottom: 25px
+        font-size: em(14px)
+        color: #fff
+        sup
+          text-transform: uppercase
+          font-size: em(10px)
+      p
+        font-family: "MyriadProRegular", sans-serif
+        font-size: 12px
+        line-height: 1.5
+        margin-bottom: 30px
+      .footer-content-nav
+        @extend %clear-list
+        li
+          display: inline-block
+          margin-right: 3px
+          font-family: "MyriadProRegular", sans-serif
+          font-size: 12px
+          &:last-child
+            margin: 0
+          a:hover
+            text-decoration: underline
+  .footer-nav-wrapper
+    position: relative
+    display: inline-block
+    padding: 0 20px
+    &::after
+      @extend %pseudo
+      top: 0
+      right: 0
+      width: 1px
+      height: 100%
+      background: #2E2E33
+    &:first-child
+      padding-left: 0
+    &:last-child
+      &::after
+        display: none
+    .footer-nav-header
+      margin-bottom: 25px
+      font-size: em(14px)
+      color: #fff
+    ul
+      @extend %clear-list
+      li
+        margin-bottom: 10px
+        &:last-child
+          margin-bottom: 0
+      a
+        color: #67747f
+        font-size: em(13px)
+        &:hover
+          text-decoration: underline
+
+@import "media"

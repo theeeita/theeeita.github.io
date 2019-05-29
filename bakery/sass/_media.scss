@@ -1,0 +1,244 @@
+@import "dev/vars";
+@import "dev/mixins";
+@import "dev/functions";
+
+/* ============== Desktop ============== */
+@media only screen and (max-width : 1200px) { /* <= 1200 - Extra Large (xl) */
+  .main-header {
+    .top-line {
+      .main-menu {
+        li {
+          padding: 0 20px;
+        }
+      }
+    }
+  }
+  
+  .section-slider {
+    .tabs-wrapper {
+      .slider-nav-wrapper {
+        position: relative;
+        left: 50%;
+        transform: translate(-50% , 0);
+      }
+      .tab-content-item {
+        .content-item-image, .content-item-description {
+          float: none;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .main-footer {
+    .footer-logo {
+      margin-bottom: 25px;
+    }
+    .footer-nav {
+      li {
+        padding: 0 20px;
+      }
+    }
+  }
+  
+}
+
+
+@media only screen and (max-width : 992px) { /* <= 992 - Large (lg) */
+  
+  * {
+    transition: none !important;
+  }
+  
+  .main-header {
+    height: 700px;
+    .top-line {
+      height: auto;
+      padding: 10px 0;
+      .logo {
+        margin-bottom: 25px;
+        text-align: center;
+        line-height: 1.5;
+      }
+      .main-menu {
+        li {
+          padding: 0 15px;
+        }
+      }
+    }
+    .main-header-content {
+      padding-top: 100px;
+    }
+  }
+  
+  .section-teasers {
+    padding: 50px 0;
+    .teasers-wrapper {
+      margin-top: 40px;
+      text-align: center;
+      .teaser-image-wrapper {
+        float: none !important;
+        display: inline-block;
+      }
+    }
+  }
+
+  .section-slider {
+    .tab-content-item {
+      .item-ready-box {
+        top:0 !important;
+        right: 0 !important;
+      }
+    }
+  }
+  
+  .section-price-list {
+    .price-cards-wrapper {
+      max-width: 100%;
+      .price-card {
+        position: static;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 25px 0;
+        cursor: default;
+        &::before, &::after {
+          display: none !important;
+        }
+      }
+    }
+  }
+  
+}
+
+
+@media only screen and (max-width : 768px) { /* <= 768 - Medium (md) */
+  .main-header {
+    .top-line {
+      padding-top: 20px;
+      .mobile-menu-toggle {
+        position: absolute;
+        right: 15px;
+        top: -5px;
+        display: block;
+      }
+      .main-menu {
+        position: absolute;
+        top: 34px;
+        right: 15px;
+        display: none;
+        background: rgba(86,83,76, .53);
+        border-radius: 0 0 5px 5px;
+        li {
+          float: none;
+          display: block;
+          padding: 5px 10px;
+          font-size: 13px;
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+    .main-header-content {
+      padding-top: 70px;
+      padding-bottom: 50px;
+      h1 {
+        padding-bottom: 40px;
+        font-size: 70px;
+      }
+      .slogan {
+        margin: 40px 0;
+        font-size: 20px;
+      }
+    }
+    .main-header-icon {
+      display: none;
+    }
+  }
+  
+  .section-teasers {
+    .teasers-description {
+      .description-text {
+        margin: 30px 0;
+      }
+    }
+  }
+
+  .main-footer {
+    .recipe-preview-wrapper {
+      .button {
+        left: -10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 576px) { /* <= 576 - Small (sm) */
+
+  .main-header {
+    .top-line {
+      .social-links {
+        text-align: center;
+        ul {
+          display: inline-block;
+        }
+      }
+      .mobile-menu-toggle {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  .section-teasers {
+    .person-wrapper {
+      .person-data {
+        .person-profile {
+          .person-name, .person-surname {
+            padding: 10px;
+            font-size: 16px;
+          }
+        }
+      }
+      .person-quote {
+        width: 90%;
+      }
+    }
+  }
+
+  .section-slider {
+    .tabs-wrapper {
+      .slider-nav-wrapper {
+        width: 210px;
+        button {
+          top: 10px;
+        }
+        .tab-button {
+          width: 50px;
+          height: 50px;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+
+}
+
+/* ============== Mobile ============== */
+@media only screen and (min-width : 576px) {
+
+}
+
+@media only screen and (min-width : 768px) {
+
+}
+
+@media only screen and (min-width : 992px) {
+
+}
+
+@media only screen and (min-width : 1200px) {
+	
+}
+

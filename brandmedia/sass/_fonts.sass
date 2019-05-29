@@ -1,0 +1,15 @@
+// Миксин для быстрой вставки шрифтов через sass, важно именование файлов!
+// @include fontFace("RobotoRegular", "Путь к файлам: eot, woff, ttf")
+@mixin fontFace ($family, $path)
+  @font-face
+    font-family: $family
+    src: url("../#{$path}/#{$family}.eot"), url("../#{$path}/#{$family}.ttf") format("truetype"), url("../#{$path}/#{$family}.woff") format("woff")
+
+// Тут подключать все шрифты
+@include fontFace("RobotoRegular", "fonts/RobotoRegular")
+@include fontFace("nevis", "fonts/nevis")
+@include fontFace("HelveticaNeue", "fonts/HelveticaNeue")
+@include fontFace("HelveticaNeueBold", "fonts/HelveticaNeueBold")
+@include fontFace("MyriadProRegular", "fonts/MyriadProRegular")
+@include fontFace("MyriadProSemiboldItalic", "fonts/MyriadProSemiboldItalic")
+@include fontFace("MyriadProBlackSemiboldItalic", "fonts/MyriadProBlackSemiboldItalic")
