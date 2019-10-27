@@ -1,0 +1,5 @@
+@import "vars";
+
+@function em($font-size) {
+  @return #{$font-size/$default-font-size}em;
+}
