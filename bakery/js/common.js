@@ -82,4 +82,4 @@ $priceCards.on("click", function () {
   shuffleRight($clickedSiblings, { start: -15, offset: 15 }, $clickedSiblings.length, { start: 0.95, scaling: 0.05 }, 992);
 });
 
-$(".teaser-image-wrapper img").attr("style", "display: block !important");
+$(".cake-image-wrapper img").attr("style", "display: block !important");
