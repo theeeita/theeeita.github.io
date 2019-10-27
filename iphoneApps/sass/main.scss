@@ -362,7 +362,7 @@ a, a:hover, a:active {
 		font-size: em(16px);
 		border-top: 1px solid #DEDEE0;
 		border-bottom: 1px solid #DEDEE0;
-		background: linear-gradient(to right, #E0E1E3 0%, #ECEDEF 50%, #E0E1E3 100%);
+		background: linear-gradient(to right, transparent 0%, #ECEDEF 50%, transparent 100%);
 		.owl-dots, .owl-nav {
 			display: none !important;
 		}
