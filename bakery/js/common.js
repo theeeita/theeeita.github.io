@@ -46,7 +46,7 @@ $sliderControlNext.on("click", function () {
  * @param {Object} $collection - коллекция jquery, которую необходимо отсортировать.
  * @param {Object} right - параметры сдвига вправо, start - изначальная позиция, offset - сдвиг.
  * @param {Number} zIndex - z-index самого первого элемента.
- * @param {Object} scale - параметры масштабирования, start - изначальный масштаб, offset - коэффициент мастабирования.
+ * @param {Object} scale - параметры масштабирования, start - изначальный масштаб, scaling - коэффициент мастабирования.
  * @param {Number} minWidth - минимальная ширина окна, при которой должна работать функция.
  */
 function shuffleRight($collection, right, zIndex, scale, minWidth) {
