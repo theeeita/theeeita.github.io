@@ -3,7 +3,7 @@
 @import "dev/functions";
 @import "dev/extensions";
 
-@include fontface("Scriptina", "Scriptina/Scriptina");
-@include fontface("AlegreyaRegular", "AlegreyaRegular/AlegreyaRegular");
-@include fontface("PlayfairDisplayBold", "PlayfairDisplayBold/PlayfairDisplayBold");
-@include fontface("ProximaNova", "ProximaNova/ProximaNova");
+@include fontface("Scriptina", "fonts/Scriptina");
+@include fontface("AlegreyaRegular", "fonts/AlegreyaRegular");
+@include fontface("PlayfairDisplayBold", "fonts/PlayfairDisplayBold");
+@include fontface("ProximaNova", "fonts/ProximaNova");
