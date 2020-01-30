@@ -1,0 +1,6 @@
+@import "mixins/font_face";
+
+@include fontFace("MyriadProRegular", "fonts/MyriadProRegular");
+@include fontFace("MyriadProBold", "fonts/MyriadProBold");
+@include fontFace("MyriadProItalic", "fonts/MyriadProItalic");
+@include fontFace("MyriadProSemibold", "fonts/MyriadProSemibold");
