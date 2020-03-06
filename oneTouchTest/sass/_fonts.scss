@@ -1,0 +1,4 @@
+@import "mixins/font_face";
+
+@include fontFace("Calibri", "fonts/Calibri");
+@include fontFace("Georgia", "fonts/Georgia");
