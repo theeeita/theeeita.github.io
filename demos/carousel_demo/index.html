@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="../dist/css/carousel.css">
+	<link rel="stylesheet" href="css/tests.css">
+	<title>Тесты</title>
+</head>
+<body>
+
+	<div class="test-slider-wrapper">
+		<div class="test-1">
+			<div><img src="img/test1/1.jpg" alt="Rammstein"></div>
+			<div><img src="img/test1/2.jpg" alt="Within Temptation"></div>
+			<div><img src="img/test1/3.jpg" alt="Marilyn Manson"></div>
+			<div><img src="img/test1/4.png" alt="Taylor Swift"></div>
+		</div> <!-- test-1 -->
+		<div class="test-description">
+			<h3>Пример №1</h3>
+			<p>Слайдер использует все параметры по умолчанию. Передан только HTML-элемент, содержащий слайды. Слайдер можно поставить на паузу и возобновить его работу из "внешнего" кода.</p>
+		
+			<p>Эти кнопки созданы отдельно от слайдера:</p>
+			<button class="test-1_pause">Поставить на паузу</button>
+			<button class="test-1_play">Запустить</button>
+		
+		</div> <!-- test-description -->
+	</div> <!-- test-slider-wrapper -->
+
+	<div class="test-slider-wrapper">
+		<div class="test-2">
+			<div><img src="img/test2/1.jpg" alt="The Birthday Massacre"></div>
+			<div><img src="img/test2/2.jpg" alt="Hollywood Undead"></div>
+			<div><img src="img/test2/3.jpg" alt="Marilyn Manson"></div>
+		</div> <!-- test-2 -->
+		<div class="test-description">
+			<h3>Пример №2</h3>
+			<p>Установлены пользовательские классы на различные элементы слайдера. Содержимое кнопок также изменено. Слайды запрещено двигать мышкой, также отключено автопроигрывание.</p>
+		
+			<h4>Параметры, которые отличаются от значений по умолчанию (кроме root):</h4>
+			<ul>
+				<li><b>autoplay:</b> false</li>
+				<li><b>draggable:</b> false</li>
+				<li><b>outerClass:</b> "test-2-wrapper"</li>
+				<li><b>navClass:</b> "test-2-nav"</li>
+				<li><b>dotsClass:</b> "test-2-dots"</li>
+				<li><b>dotItemClass:</b> "test-2_dot-item"</li>
+				<li><b>buttonsClass:</b> "test-2-buttons"</li>
+				<li><b>prevButtonHTML:</b> "&lt;i&gt;Назад&lt;i&gt;"</li>
+				<li><b>nextButtonHTML:</b> "&lt;i&gt;Вперед&lt;i&gt;"</li>
+				<li><b>prevButtonClass:</b> "test-2-prev"</li>
+				<li><b>nextButtonClass:</b> "test-2-next"</li>
+			</ul>
+		</div> <!-- test-description -->
+	</div> <!-- test-slider-wrapper -->
+
+	<div class="test-slider-wrapper">
+		<div class="test-3">
+			<div><img src="img/test3/1.jpg" alt="Avril Lavigne"></div>
+			<div><img src="img/test3/2.jpg" alt="Britney Spears"></div>
+			<div><img src="img/test3/3.jpg" alt="Katty Perry"></div>
+			<div><img src="img/test3/4.jpg" alt="Taylor Swift"></div>
+			<div><img src="img/test3/5.jpg" alt="Rihanna"></div>
+		</div> <!-- test-1 -->
+		<div class="test-description">
+			<h3>Пример №3</h3>
+			<p>Слайдер не использует стандартно сгенерированную навигацию. Элементы управления назначены из "внешнего" кода. Также двигать элементы слайдера можно мышкой.</p>
+		
+			<h4>Параметры, которые отличаются от значений по умолчанию (кроме root):</h4>
+			<ul>
+				<li><b>nav:</b>false</li>
+				<li><b>autoplay:</b> false</li>
+				<li><b>draggable:</b> true</li>
+			</ul>
+
+			<p>Эти кнопки созданы отдельно от слайдера:</p>
+			<button class="test-3_prev">Предыдущий</button>
+			<button class="test-3_next">Следующий</button>
+		</div> <!-- test-description -->
+	</div> <!-- test-slider-wrapper -->
+
+	<script src="../dist/js/carousel-min.js"></script>
+	<script src="js/tests.js"></script>
+</body>
+</html>
