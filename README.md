@@ -1,6 +1,7 @@
 ## Примеры верстки
 
 Примеры адаптивной верстки макетов. Все проекты собраны на **Gulp**. Это *учебные* проекты.
+Каталог `demos` содержит различные тестовые задания или другие наработки.
  
 ### Bakery website
 [Демо](https://theeeita.github.io/bakery/) [Исходники](https://github.com/theeeita/theeeita.github.io/tree/master/bakery)
