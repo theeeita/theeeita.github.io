@@ -1,0 +1,16 @@
+// Расширения для элементов.
+
+%pseudo {
+  position: absolute;
+  content: "";
+}
+
+%clearfix {
+  content: "";
+  clear: both;
+}
+
+%common-sprite {
+  background-image: url("../images/optimized/common_sprite.png");
+  background-color: transparent;
+}
