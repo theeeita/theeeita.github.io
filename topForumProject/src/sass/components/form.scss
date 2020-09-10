@@ -1,0 +1,67 @@
+/**
+  Стилизация блока (компонента) форма (form).
+  =============================================
+  Класс "form" описывает общие стили для всех
+  форм и ее дочерних элементов, модификации ее
+  описаны в "main.scss".
+ */
+
+@import "../vars";
+@import "../extensions";
+
+.form-default {
+  display: flex;
+  flex-direction: column;
+  &__header {
+    margin-bottom: 20px;
+    font-family: "RobotoRegular", sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__row-item {
+    display: flex;
+  }
+
+  &__row-header {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &__accepted {
+    display: flex;
+    align-items: center;
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    span {
+      display: inline-block;
+      margin-right: 3px;
+    }
+  }
+
+  label {
+    display: block;
+  }
+
+  input[type="text"],
+  select,
+  textarea {
+    padding: 20px;
+    width: 100%;
+    border: 1px solid $golden-color;
+    font-family: "RobotoLight", sans-serif;
+    font-size: 14px;
+    color: #606060;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+}
