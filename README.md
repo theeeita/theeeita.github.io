@@ -1,6 +1,7 @@
 ## Примеры верстки
 
 Примеры адаптивной верстки макетов. Все проекты собраны на **Gulp**. Это *учебные* проекты.
+Каталог `demos` содержит различные тестовые задания или другие наработки.
  
 ### Bakery website
 [Демо](https://theeeita.github.io/bakery/) [Исходники](https://github.com/theeeita/theeeita.github.io/tree/master/bakery)
@@ -25,3 +26,10 @@
  
   * Блочная верстка.
   * Адаптивность без использования сетки.
+
+ ### Хлебомолы
+[Демо](https://theeeita.github.io/oneTouchTest/) [Исходники](https://github.com/theeeita/theeeita.github.io/tree/master/oneTouchTest)
+
+  * Блочная верстка.
+  * Адаптивность с помощью сетки **Bootstrap 3**.
+  * Корренктно отображается во всех браузерах (до IE 9).
