@@ -2,7 +2,16 @@
 
 Примеры адаптивной верстки макетов. Все проекты собраны на **Gulp**. Это *учебные* проекты.
 Каталог `demos` содержит различные тестовые задания или другие наработки.
+
+### topForumClub
+[Демо](https://theeeita.github.io/topForumClub/assets/dist/index.html) [Исходники](https://github.com/theeeita/theeeita.github.io/tree/master/topForumClub/assets/src)
  
+  * Верстка на flexbox.
+  * Адаптивность с помощью сетки **Bootstrap 4**.
+  * Количество страниц - **11**.
+  * Используется **БЭМ** (я начинающий, поэтому с ошибками, поправляю по мере изучения).
+  * Базовая посадка на WordPress (я начинающий, поэтому с ошибками, поправляю по мере изучения).
+  
 ### Bakery website
 [Демо](https://theeeita.github.io/bakery/) [Исходники](https://github.com/theeeita/theeeita.github.io/tree/master/bakery)
 
