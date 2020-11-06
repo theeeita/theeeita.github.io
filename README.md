@@ -4,7 +4,7 @@
 Каталог `demos` содержит различные тестовые задания или другие наработки.
 
 ### topForumClub
-[Демо](https://theeeita.github.io/topForumClub/theme_assets/dist/) [Исходники](https://github.com/theeeita/theeeita.github.io/tree/master/topForumClub/assets/src)
+[Демо](https://theeeita.github.io/topForumClub/theme_assets/dist/index.html) [Исходники](https://github.com/theeeita/theeeita.github.io/tree/master/topForumClub/assets/src)
  
   * Верстка на flexbox.
   * Адаптивность с помощью сетки **Bootstrap 4**.
