@@ -124,7 +124,7 @@ let contactsMap, contactsPlaceMarker;
 /**
  * @description Добавляет Яндекс-карту контактов по указанным координатам.
  * @param {String} address Строка адреса. Части резделять запятыми: "Россия, Москва, ...".
- * @param {String} container id элемента, в который будет подгружаться карта. Указывать без "#".
+ * @param {String} container Контейнер
  * @param {String} pointerSrc Путь к иконке в центре макета
  */
 function initContactsMap(address, container, pointerSrc) {
