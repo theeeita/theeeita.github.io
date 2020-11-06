@@ -1,0 +1,29 @@
+/**
+  Стилизация блока (компонента) секция (section).
+  ====================================================
+  Класс "common-section" описывает общие стили для всех
+  форм и ее дочерних элементов, модификации ее описаны
+  в "main.scss".
+ */
+
+.common-section {
+  .common-section__header {
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .common-section__content {
+    font-size: 17px;
+    line-height: 1.3;
+    text-align: center;
+  }
+  .common-section__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    &--column {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+  }
+}
