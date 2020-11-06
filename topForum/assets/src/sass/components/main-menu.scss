@@ -1,0 +1,35 @@
+/**
+  Стилизация блока (компонента) Главное меню (main-menu).
+  ===========================================================
+  Класс "button" описывает общие стили для всех главных меню
+  (со всеми ссылками) на сайте, с последующими их модификациями
+  в зависимости от их расположения на сайте и отображением
+  пунктов меню.
+ */
+
+@import "../vars";
+@import "../extensions";
+
+.main-menu {
+  color: #fff;
+    &__list {
+      display: flex;
+    }
+    &__list-item {
+      position: relative;
+      &:hover {
+        & > .main-menu__submenu {
+          display: block;
+        }
+      }
+    }
+    &__submenu {
+      display: none;
+      position: absolute;
+      z-index: 3;
+      a {
+        display: block;
+        text-transform: capitalize;
+      }
+    }
+}
